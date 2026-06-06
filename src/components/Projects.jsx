@@ -1,39 +1,35 @@
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce solution built with Laravel, featuring product management, cart system, payment gateway integration, and real-time order tracking.',
-    tags: ['Laravel', 'MySQL', 'Stripe', 'Vue.js', 'Redis'],
-    color: '#06b6d4',
-  },
-  {
-    title: 'Project Management SaaS',
-    description: 'A collaborative project management tool with task boards, team chat, time tracking, and automated reporting. Built for scalability with multi-tenant architecture.',
-    tags: ['Laravel', 'React', 'PostgreSQL', 'WebSockets', 'Docker'],
-    color: '#8b5cf6',
-  },
-  {
-    title: 'Healthcare CMS',
-    description: 'Custom content management system for healthcare providers with appointment booking, patient portal, HIPAA-compliant data handling, and analytics dashboard.',
-    tags: ['Laravel', 'Livewire', 'MySQL', 'AWS', 'REST API'],
+    title: 'SUB Admission System v1.0',
+    description: 'A complete student admission management platform for the State University of Bangladesh. Designed as a group project to handle student enrollment workflows, fee slip tracking, course registration, and PDF report creation.',
+    tags: ['Laravel 12', 'React', 'Inertia.js', 'MySQL', 'Fortify', 'Dompdf'],
     color: '#10b981',
+    githubUrl: 'https://github.com/rxasan-rakib/SUB_Admission_System_v1.0',
+    liveUrl: null,
   },
   {
-    title: 'Real Estate Portal',
-    description: 'Property listing platform with advanced search filters, map integration, virtual tour support, and an agent dashboard for managing listings and leads.',
-    tags: ['Laravel', 'Vue.js', 'Elasticsearch', 'Google Maps', 'S3'],
+    title: 'Laravel AI SDK Resume Analyzer',
+    description: 'An AI-powered recruitment utility that parses PDF resumes and evaluates qualifications using the Laravel AI SDK. Automatically scores matches and generates structured feedback.',
+    tags: ['Laravel 13', 'Laravel AI SDK', 'PDF Parser', 'PHP 8.3', 'MySQL', 'Pest'],
+    color: '#8b5cf6',
+    githubUrl: 'https://github.com/rakibhossainporosh/Laravel-Ai-SDK-Resume-Analyzer',
+    liveUrl: null,
+  },
+  {
+    title: 'Study Abroad Portal',
+    description: 'A clean, responsive landing page and information directory designed for study abroad consultancies. Utilizes modern typography, web fonts, and custom CSS effects.',
+    tags: ['HTML5', 'CSS3', 'Bootstrap 5', 'JavaScript'],
+    color: '#06b6d4',
+    githubUrl: 'https://github.com/rakibhossainporosh/Study-Abroad-with-Bootstrap',
+    liveUrl: null,
+  },
+  {
+    title: 'Laravel 12 Admin Panel',
+    description: 'A robust, customizable admin dashboard template utilizing Laravel 12 and Inertia React. Features role-based auth, secure middleware, and file uploading/resizing modules.',
+    tags: ['Laravel 12', 'React', 'Inertia.js', 'Fortify', 'MySQL', 'Intervention Image'],
     color: '#f59e0b',
-  },
-  {
-    title: 'FinTech Dashboard',
-    description: 'Financial analytics dashboard with real-time data visualization, transaction monitoring, automated reports, and role-based access control.',
-    tags: ['Laravel', 'React', 'Chart.js', 'Redis', 'REST API'],
-    color: '#ef4444',
-  },
-  {
-    title: 'Learning Management System',
-    description: 'Online learning platform with course creation tools, video streaming, quizzes, certificates, and progress tracking for students and instructors.',
-    tags: ['Laravel', 'Inertia.js', 'MySQL', 'FFmpeg', 'Stripe'],
-    color: '#ec4899',
+    githubUrl: 'https://github.com/rakibhossainporosh/Admin-Panel-Laravel-12-MySQL-',
+    liveUrl: null,
   },
 ]
 
@@ -89,14 +85,18 @@ export default function Projects() {
 
                 {/* Links */}
                 <div className="flex gap-5 pt-4 border-t border-[var(--color-border)]">
-                  <a href="#" className="flex items-center gap-1.5 text-[0.82rem] font-semibold hover:opacity-70 transition-opacity" style={{ color: project.color }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
-                    Live Demo
-                  </a>
-                  <a href="#" className="flex items-center gap-1.5 text-[0.82rem] font-semibold hover:opacity-70 transition-opacity" style={{ color: project.color }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
-                    Source Code
-                  </a>
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[0.82rem] font-semibold hover:opacity-70 transition-opacity" style={{ color: project.color }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                      Live Demo
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[0.82rem] font-semibold hover:opacity-70 transition-opacity" style={{ color: project.color }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
+                      Source Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
